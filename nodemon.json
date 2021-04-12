@@ -1,7 +1,0 @@
-{
-    "env":{
-        "DB_USER":"Aamir",
-        "DB_PASSWORD":"Aamir8692",
-        "DB_NAME":"InventoryManagement"
-    }
-}
