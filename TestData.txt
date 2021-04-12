@@ -1,0 +1,408 @@
+ #################------USERS RELATED ROUTES---------######################
+
+ 
+ 1: http://localhost:5000/api/users/signup     //POST route for Employee SignUp
+
+RequestData:
+{
+    "name":"arshad",
+    "employee_id":"17CO39",
+    "password":"123456",
+    "designation":"Developer"
+}
+
+Response:
+{
+    "createdUser": {
+        "_id": "6073df9ff56b59117a2ae201",
+        "name": "arshad",
+        "employee_id": "17CO39",
+        "password": "$2a$14$BgN/MhseH3LI2.xBiTMRS.2RxkoFubVjYeMRCCdV5DngmUaRugbTm", //hashed Password
+        "designation": "Developer",
+        "__v": 0
+    }
+}
+
+
+2:http://localhost:5000/api/users/login     //POST route for Employee Login
+
+RequestData:
+{
+    "employee_id":"17CO39",
+    "password":"123456"
+}
+
+ResponseData:
+{
+    "existingUser": {
+        "_id": "6073df9ff56b59117a2ae201",
+        "name": "arshad",
+        "employee_id": "17CO39",
+        "password": "$2a$14$BgN/MhseH3LI2.xBiTMRS.2RxkoFubVjYeMRCCdV5DngmUaRugbTm",
+        "designation": "Developer",
+        "__v": 0
+    }
+}
+
+
+#################------PURCHASE RECORDS RELATED ROUTES---------######################
+
+http://localhost:5000/api/purchase      //GET route for extracting all purchase records from DB 
+
+ResponseData:{
+    "purchases": [
+        {
+            "supplier": {
+                "name": "A-1 Fabric Company",
+                "address": "Mumbai India",
+                "mobileNo": "+919123456789"
+            },
+            "_id": "60337fd257c0a4124b09f831",
+            "productName": "Cotton Fabric",
+            "description": "for xyz reasons",
+            "unitCost": 100,
+            "quantity": 5,
+            "price": 500,
+            "date": "2020-12-01T00:00:00.000Z",
+            "__v": 0,
+            "id": "60337fd257c0a4124b09f831"
+        },
+        {
+            "supplier": {
+                "name": "A-1 Fabric Company",
+                "address": "Mumbai India",
+                "mobileNo": "+919123456789"
+            },
+            "_id": "603775aece492c0cae8e1635",
+            "productName": "Updated Jeans Shirt",
+            "description": "Updated for xyz reasons",
+            "unitCost": 300,
+            "quantity": 5,
+            "price": 1500,
+            "date": "2021-02-01T00:00:00.000Z",
+            "__v": 0,
+            "id": "603775aece492c0cae8e1635"
+        },
+        {
+            "supplier": {
+                "name": "A-1 Fabric Company",
+                "address": "Mumbai India",
+                "mobileNo": "+919123456789"
+            },
+            "_id": "6073e300ab4914127fcf02e3",
+            "productName": "Synthetic Fabric",
+            "description": "For Production purpose",
+            "unitCost": 150,
+            "quantity": 50,
+            "price": 500,
+            "date": "2020-12-01T00:00:00.000Z",
+            "__v": 0,
+            "id": "6073e300ab4914127fcf02e3"
+        }
+    ]
+}
+
+
+
+http://localhost:5000/api/purchase      //POST route for adding Purchase records to Database 
+
+RequestData:
+{
+    "productName": "Synthetic Fabric",
+    "description": "For Production purpose",
+    "unitCost": 150,
+    "quantity": 50,
+    "price": 500,
+    "supplier": {
+        "name": "A-1 Fabric Company",
+        "address": "Mumbai India",
+        "mobileNo": "+919123456789"
+    },
+    "date":"2020-12-01"
+}
+
+ResponseData:
+{
+    "purchase": {
+        "_id": "6073e300ab4914127fcf02e3",
+        "productName": "Synthetic Fabric",
+        "description": "For Production purpose",
+        "unitCost": 150,
+        "quantity": 50,
+        "price": 500,
+        "supplier": {
+            "name": "A-1 Fabric Company",
+            "address": "Mumbai India",
+            "mobileNo": "+919123456789"
+        },
+        "date": "2020-12-01T00:00:00.000Z",
+        "__v": 0
+    }
+}
+
+
+http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //GET route for extracting particular purchase record from DB
+
+ResponseData:
+{
+    "purchase": {
+        "supplier": {
+            "name": "A-1 Fabric Company",
+            "address": "Mumbai India",
+            "mobileNo": "+919123456789"
+        },
+        "_id": "6073e300ab4914127fcf02e3",
+        "productName": "Synthetic Fabric",
+        "description": "For Production purpose",
+        "unitCost": 150,
+        "quantity": 50,
+        "price": 500,
+        "date": "2020-12-01T00:00:00.000Z",
+        "__v": 0
+    }
+}
+
+
+http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //PATCH route for updating particular purchase record in DB
+
+RequestData:
+{
+    "productName": "Updated Synthetic Fabric",
+    "description": "Updated for xyz reasons",
+    "unitCost": 150,
+    "quantity": 100,
+    "price": 400,
+    "date":"2021-02-01"
+}
+
+ResponseData:
+{
+    "purchase": {
+        "supplier": {
+            "name": "A-1 Fabric Company",
+            "address": "Mumbai India",
+            "mobileNo": "+919123456789"
+        },
+        "_id": "6073e300ab4914127fcf02e3",
+        "productName": "Updated Synthetic Fabric",
+        "description": "Updated for xyz reasons",
+        "unitCost": 150,
+        "quantity": 100,
+        "price": 400,
+        "date": "2021-02-01T00:00:00.000Z",
+        "__v": 0,
+        "id": "6073e300ab4914127fcf02e3"
+    }
+}
+
+
+http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //DELETE route for deleting particular purchase record in DB
+
+ResponseData:
+{
+    "message": "Deleted Record Successfully..."
+}
+
+
+#################------SALES RECORD RELATED ROUTES---------######################
+
+http://localhost:5000/api/sale      //GET route for extracting all sales records from DB 
+
+ResponseData:
+{
+    "sales": [
+        {
+            "customer": {
+                "name": "Aamir",
+                "address": "Thane",
+                "mobileNo": "+918286237776"
+            },
+            "_id": "6037799807d5d60d99ecb67c",
+            "productName": "Updated Cotton Fabric",
+            "quantity": 5,
+            "price": 500,
+            "date": "2020-04-06T00:00:00.000Z",
+            "__v": 0,
+            "id": "6037799807d5d60d99ecb67c"
+        }
+    ]
+}
+
+
+http://localhost:5000/api/sale      //POST route for adding sales record to DB
+
+RequestData:
+{
+    "productName": "Silk Fabric",
+    "quantity": 5,
+    "price": 500,
+    "customer": {
+        "name": "Tom",
+        "address": "Mumbai",
+        "mobileNo": "+918286237776"
+    },
+    "date":"2021-2-05"
+}
+
+ResponseData:
+{
+    "Sale": {
+        "_id": "6073e98a447a3013b1f0e201",
+        "productName": "Silk Fabric",
+        "quantity": 5,
+        "price": 500,
+        "customer": {
+            "name": "Tom",
+            "address": "Mumbai",
+            "mobileNo": "+918286237776"
+        },
+        "date": "2021-02-04T18:30:00.000Z",
+        "__v": 0
+    }
+}
+
+
+http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //GET route for extracting particular sales records from DB
+
+ResponseData:
+{
+    "sale": {
+        "customer": {
+            "name": "Tom",
+            "address": "Mumbai",
+            "mobileNo": "+918286237776"
+        },
+        "_id": "6073e98a447a3013b1f0e201",
+        "productName": "Silk Fabric",
+        "quantity": 5,
+        "price": 500,
+        "date": "2021-02-04T18:30:00.000Z",
+        "__v": 0
+    }
+}
+
+
+http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //PATCH route for updating particular sales record in DB
+
+RequestData:
+{
+    "productName": "Updated Silk Fabric",
+    "quantity": 15,
+    "price": 500,
+    "date":"2021-03-06"
+}
+
+ResponseData:
+{
+    "sale": {
+        "customer": {
+            "name": "Tom",
+            "address": "Mumbai",
+            "mobileNo": "+918286237776"
+        },
+        "_id": "6073e98a447a3013b1f0e201",
+        "productName": "Updated Silk Fabric",
+        "quantity": 15,
+        "price": 500,
+        "date": "2021-03-06T00:00:00.000Z",
+        "__v": 0,
+        "id": "6073e98a447a3013b1f0e201"
+    }
+}
+
+
+http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //DELETE route for deleting particular sales record in DB
+
+ResponseData:
+{
+    "message": "Record deleted successfully"
+}
+
+
+#################------MAINTAINANCE RECORD RELATED ROUTES---------######################
+
+
+http://localhost:5000/api/maintainance      //GET route for extracting all maintainance records from DB
+
+ResponseData:
+{
+    "maintainances": [
+        {
+            "_id": "603777637d22710d44089a80",
+            "name": " Updated Electricity",
+            "description": "Updated for the month of Jan",
+            "cost": 500,
+            "date": "2021-01-01T00:00:00.000Z",
+            "__v": 0,
+            "id": "603777637d22710d44089a80"
+        }
+    ]
+}
+
+
+http://localhost:5000/api/maintainance      //POST route for adding maintainance record to DB
+
+RequestData:
+{
+    "name": "Motor Servicing",
+    "description": "Monthly servicing",
+    "cost": 5000,
+    "date":"2021-02-06"
+}
+
+ResponseData:
+{
+    "Maintainance": {
+        "_id": "6073ee96447a3013b1f0e202",
+        "name": "Motor Servicing",
+        "description": "Monthly servicing",
+        "cost": 5000,
+        "date": "2021-02-06T00:00:00.000Z",
+        "__v": 0
+    }
+}
+
+
+http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202      //GET route for extracting particular maintainance record from DB
+
+ResponseData:
+{
+    "maintainance": {
+        "_id": "6073ee96447a3013b1f0e202",
+        "name": "Motor Servicing",
+        "description": "Monthly servicing",
+        "cost": 5000,
+        "date": "2021-02-06T00:00:00.000Z",
+        "__v": 0
+    }
+}
+
+http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202     //PATCH route for updating particular maintainance record in DB
+
+RequestData:
+{
+    "name": " Updated Motor Servicing",
+    "description": "Updated for the month of Feb",
+    "cost": 5500,
+    "date":"2021-02-06"
+}
+
+ResponseData:
+{
+    "maintainance": {
+        "_id": "6073ee96447a3013b1f0e202",
+        "name": " Updated Motor Servicing",
+        "description": "Updated for the month of Feb",
+        "cost": 5500,
+        "date": "2021-02-06T00:00:00.000Z",
+        "__v": 0,
+        "id": "6073ee96447a3013b1f0e202"
+    }
+}
+
+http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202     //DELETE route for deleting particular maintainance record in DB
+
+ResponseData:
+{
+    "message": "Record deleted successfully"
+}
