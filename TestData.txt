@@ -1,7 +1,7 @@
  #################------USERS RELATED ROUTES---------######################
 
  
- 1: http://localhost:5000/api/users/signup     //POST route for Employee SignUp
+ 1: https://inventory-management-node.herokuapp.com/api/users/signup     //POST route for Employee SignUp
 
 RequestData:
 {
@@ -24,7 +24,7 @@ Response:
 }
 
 
-2:http://localhost:5000/api/users/login     //POST route for Employee Login
+2: https://inventory-management-node.herokuapp.com/api/users/login     //POST route for Employee Login
 
 RequestData:
 {
@@ -47,7 +47,7 @@ ResponseData:
 
 #################------PURCHASE RECORDS RELATED ROUTES---------######################
 
-http://localhost:5000/api/purchase      //GET route for extracting all purchase records from DB 
+https://inventory-management-node.herokuapp.com/api/purchase      //GET route for extracting all purchase records from DB 
 
 ResponseData:{
     "purchases": [
@@ -104,7 +104,7 @@ ResponseData:{
 
 
 
-http://localhost:5000/api/purchase      //POST route for adding Purchase records to Database 
+https://inventory-management-node.herokuapp.com/api/purchase      //POST route for adding Purchase records to Database 
 
 RequestData:
 {
@@ -141,7 +141,7 @@ ResponseData:
 }
 
 
-http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //GET route for extracting particular purchase record from DB
+https://inventory-management-node.herokuapp.com/api/purchase/6073e300ab4914127fcf02e3     //GET route for extracting particular purchase record from DB
 
 ResponseData:
 {
@@ -163,7 +163,7 @@ ResponseData:
 }
 
 
-http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //PATCH route for updating particular purchase record in DB
+https://inventory-management-node.herokuapp.com/api/purchase/6073e300ab4914127fcf02e3     //PATCH route for updating particular purchase record in DB
 
 RequestData:
 {
@@ -196,7 +196,7 @@ ResponseData:
 }
 
 
-http://localhost:5000/api/purchase/6073e300ab4914127fcf02e3     //DELETE route for deleting particular purchase record in DB
+https://inventory-management-node.herokuapp.com/api/purchase/6073e300ab4914127fcf02e3     //DELETE route for deleting particular purchase record in DB
 
 ResponseData:
 {
@@ -206,7 +206,7 @@ ResponseData:
 
 #################------SALES RECORD RELATED ROUTES---------######################
 
-http://localhost:5000/api/sale      //GET route for extracting all sales records from DB 
+https://inventory-management-node.herokuapp.com/api/sale      //GET route for extracting all sales records from DB 
 
 ResponseData:
 {
@@ -229,7 +229,7 @@ ResponseData:
 }
 
 
-http://localhost:5000/api/sale      //POST route for adding sales record to DB
+https://inventory-management-node.herokuapp.com/api/sale      //POST route for adding sales record to DB
 
 RequestData:
 {
@@ -261,8 +261,7 @@ ResponseData:
     }
 }
 
-
-http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //GET route for extracting particular sales records from DB
+https://inventory-management-node.herokuapp.com/api/sale/6073e98a447a3013b1f0e201     //GET route for extracting particular sales records from DB
 
 ResponseData:
 {
@@ -281,8 +280,7 @@ ResponseData:
     }
 }
 
-
-http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //PATCH route for updating particular sales record in DB
+https://inventory-management-node.herokuapp.com/api/sale/6073e98a447a3013b1f0e201     //PATCH route for updating particular sales record in DB
 
 RequestData:
 {
@@ -311,7 +309,7 @@ ResponseData:
 }
 
 
-http://localhost:5000/api/sale/6073e98a447a3013b1f0e201     //DELETE route for deleting particular sales record in DB
+https://inventory-management-node.herokuapp.com/api/sale/6073e98a447a3013b1f0e201     //DELETE route for deleting particular sales record in DB
 
 ResponseData:
 {
@@ -322,7 +320,7 @@ ResponseData:
 #################------MAINTAINANCE RECORD RELATED ROUTES---------######################
 
 
-http://localhost:5000/api/maintainance      //GET route for extracting all maintainance records from DB
+https://inventory-management-node.herokuapp.com/api/maintainance      //GET route for extracting all maintainance records from DB
 
 ResponseData:
 {
@@ -339,8 +337,7 @@ ResponseData:
     ]
 }
 
-
-http://localhost:5000/api/maintainance      //POST route for adding maintainance record to DB
+https://inventory-management-node.herokuapp.com/api/maintainance      //POST route for adding maintainance record to DB
 
 RequestData:
 {
@@ -362,8 +359,7 @@ ResponseData:
     }
 }
 
-
-http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202      //GET route for extracting particular maintainance record from DB
+https://inventory-management-node.herokuapp.com/api/maintainance/6073ee96447a3013b1f0e202      //GET route for extracting particular maintainance record from DB
 
 ResponseData:
 {
@@ -377,7 +373,7 @@ ResponseData:
     }
 }
 
-http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202     //PATCH route for updating particular maintainance record in DB
+https://inventory-management-node.herokuapp.com/api/maintainance/6073ee96447a3013b1f0e202     //PATCH route for updating particular maintainance record in DB
 
 RequestData:
 {
@@ -399,8 +395,7 @@ ResponseData:
         "id": "6073ee96447a3013b1f0e202"
     }
 }
-
-http://localhost:5000/api/maintainance/6073ee96447a3013b1f0e202     //DELETE route for deleting particular maintainance record in DB
+https://inventory-management-node.herokuapp.com/api/maintainance/6073ee96447a3013b1f0e202     //DELETE route for deleting particular maintainance record in DB
 
 ResponseData:
 {
